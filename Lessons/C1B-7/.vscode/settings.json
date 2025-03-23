@@ -1,0 +1,7 @@
+{
+    "Codegeex.CompletionDelay": 3,
+    "Codegeex.GenerationPreference": "line by line",
+    "files.associations": {
+        "cstdio": "cpp"
+    }
+}

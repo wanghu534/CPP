@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "ostream": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "git.ignoreLimitWarning": true
+}

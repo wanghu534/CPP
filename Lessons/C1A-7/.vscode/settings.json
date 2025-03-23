@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "iomanip": "cpp",
+        "ostream": "cpp",
+        "istream": "cpp"
+    },
+    "editor.fontFamily": "JetBrains Mono, 等线",
+    "debug.console.fontFamily": "Ubuntu Mono"
+}
