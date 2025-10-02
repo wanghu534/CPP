@@ -1,32 +1,37 @@
 // 素数的筛法
-#include <cmath>
 #include <iostream>
 #include <cstdio>
+#include <cmath>
 using namespace std;
 
 int main() {
     int n;
-    scanf("%d", &n);
-    cout << n;
-    for (int i = 0; i < n; i++) {
-        int x;
-        scanf("%d", &x);
-        bool flag = true;
-        if (x == 1) {
-            printf("%s\n", "NO");
-            continue;
-        }
-        for (int j = 2; j <= sqrt(x); j++) {
-            if (x % j == 0) {
-                flag = false;
-                break;
+    bool mark[1000005] = {false};
+    mark[0] = mark[1] = true;
+    for (int i = 2; i <= sqrt(1000000); i++)
+    {
+        if (!mark[i])
+        {
+            for (int j = i * 2; j <= 1000000; j += i)
+            {
+                mark[j] = true;
             }
         }
-        
-        if (flag == true)
-            printf("%s\n", "YES");
-        else 
-            printf("%s\n", "NO");
+    }
+
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        scanf("%d", &x);
+        if (mark[x] == false)
+        {
+            printf("YES\n");
+        }
+        else
+        {
+            printf("NO\n");
+        }
     }
     return 0;
 }
