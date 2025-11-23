@@ -2,12 +2,12 @@
 #include <iostream>
 using namespace std;
 int n, k;
-int b[1005];
+int b[100005];
 
 bool check(int x) {
     int cnt = 1;
     int sum = 0;
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         if (b[i] + sum <= x) {
             sum += b[i];
         } else {
@@ -21,21 +21,17 @@ bool check(int x) {
             return 0;
         }
     }
-    return true;
+    return 1;
 }
 
-long long find(long long l, long long r)
-{
+int find(long long l, long long r) {
     long long answer = 1e10;
-    while (l <= r)
-    {
+    while (l <= r) {
         long long mid = (l + r) / 2;
-        if (check(mid))
-        {
+        if (check(mid)) {
             answer = mid;
             r = mid - 1;
-        }
-        else{
+        } else {
             l = mid + 1;
         }
     }
@@ -44,10 +40,10 @@ long long find(long long l, long long r)
 
 int main() {
     cin >> n >> k;
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> b[i];
     }
 
-    cout << find(1, 1e9) << endl;
+    cout << find(1, 1e10);
     return 0;
 }
